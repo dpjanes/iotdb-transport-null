@@ -123,7 +123,7 @@ NullTransport.prototype.get = function(paramd, callback) {
 NullTransport.prototype.update = function(paramd, callback) {
     var self = this;
 
-    self._validate_updated(paramd, callback);
+    self._validate_update(paramd, callback);
 
     callback({
         id: paramd.id,
