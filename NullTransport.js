@@ -114,7 +114,7 @@ NullTransport.prototype.get = function(paramd, callback) {
 /**
  *  See {iotdb_transport.Transport#Transport} for documentation.
  */
-NullTransport.prototype.update = function(paramd, callback) {
+NullTransport.prototype.put = function(paramd, callback) {
     var self = this;
 
     self._validate_update(paramd, callback);
