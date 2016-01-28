@@ -24,6 +24,7 @@
 
 var iotdb = require('iotdb');
 var iotdb_transport = require('iotdb-transport');
+var errors = iotdb_transport.errors;
 var _ = iotdb._;
 
 var path = require('path');
@@ -35,12 +36,6 @@ var logger = iotdb.logger({
     name: 'iotdb-transport-proto',
     module: 'NullTransport',
 });
-
-var MSG_NOT_FOUND = "not found";
-var MSG_FORBIDDEN = "this operation cannot be done on this Transport";
-
-var CODE_NOT_FOUND = 404;
-var CODE_FORBIDDEN = 403;
 
 /* --- constructor --- */
 
@@ -112,8 +107,7 @@ NullTransport.prototype.get = function(paramd, callback) {
         id: paramd.id,
         band: paramd.band,
         value: null,
-        error: MSG_NOT_FOUND,
-        status: CODE_NOT_FOUND,
+        error: new errors.NotFound(),
     });
 };
 
@@ -128,8 +122,7 @@ NullTransport.prototype.update = function(paramd, callback) {
     callback({
         id: paramd.id,
         band: paramd.band,
-        error: MSG_FORBIDDEN,
-        status: CODE_FORBIDDEN,
+        error: new errors.NotImplemented(),
     });
 };
 
@@ -158,8 +151,7 @@ NullTransport.prototype.remove = function(paramd, callback) {
     callback({
         id: paramd.id,
         band: paramd.band,
-        error: MSG_FORBIDDEN,
-        status: CODE_FORBIDDEN,
+        error: new errors.NotImplemented(),
     });
 };
 
