@@ -93,12 +93,10 @@ NullTransport.prototype.get = function(paramd, callback) {
 
     self._validate_get(paramd, callback);
 
-    callback({
-        id: paramd.id,
-        band: paramd.band,
-        value: null,
-        error: new errors.NotFound(),
-    });
+    var gd = _.shallowCopy(paramd);
+    gd.value = null;
+
+    callback(new errors.NotFound(), gd);
 };
 
 /**
