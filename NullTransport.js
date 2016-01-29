@@ -107,11 +107,9 @@ NullTransport.prototype.put = function(paramd, callback) {
 
     self._validate_update(paramd, callback);
 
-    callback({
-        id: paramd.id,
-        band: paramd.band,
-        error: new errors.NotImplemented(),
-    });
+    var pd = _.shallowCopy(paramd);
+
+    callback(new errors.NotImplemented(), pd);
 };
 
 /**
