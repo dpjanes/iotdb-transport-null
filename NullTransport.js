@@ -69,11 +69,6 @@ NullTransport.prototype._class = "NullTransport";
 NullTransport.prototype.list = function(paramd, callback) {
     var self = this;
 
-    if (arguments.length === 1) {
-        paramd = {};
-        callback = arguments[0];
-    }
-
     self._validate_list(paramd, callback);
 
     callback({
@@ -86,11 +81,6 @@ NullTransport.prototype.list = function(paramd, callback) {
  */
 NullTransport.prototype.added = function(paramd, callback) {
     var self = this;
-
-    if (arguments.length === 1) {
-        paramd = {};
-        callback = arguments[0];
-    }
 
     self._validate_added(paramd, callback);
 };
@@ -131,11 +121,6 @@ NullTransport.prototype.put = function(paramd, callback) {
  */
 NullTransport.prototype.updated = function(paramd, callback) {
     var self = this;
-
-    if (arguments.length === 1) {
-        paramd = {};
-        callback = arguments[0];
-    }
 
     self._validate_updated(paramd, callback);
 };
