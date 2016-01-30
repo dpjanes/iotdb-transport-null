@@ -140,11 +140,11 @@ NullTransport.prototype.remove = function(paramd, callback) {
 
     self._validate_remove(paramd, callback);
 
-    callback({
-        id: paramd.id,
-        band: paramd.band,
-        error: new errors.NotImplemented(),
-    });
+    var rd = _.shallowCopy(paramd);
+    delete rd.band;
+    delete rd.value;
+
+    callback(new errors.NeverImplemented(), rd);
 };
 
 /* --- internals --- */
