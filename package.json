@@ -4,7 +4,7 @@
         "url": "https://github.com/dpjanes/iotdb-transport-null/issues"
     }, 
     "dependencies": {
-        "iotdb": ">=0.12.0"
+        "iotdb": ">=0.13.0"
     }, 
     "description": "Null Transport", 
     "devDependencies": {
@@ -31,5 +31,5 @@
     "scripts": {
         "test": "grunt"
     }, 
-    "version": "0.0.12"
+    "version": "0.0.13"
 }
