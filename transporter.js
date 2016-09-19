@@ -36,6 +36,7 @@ const logger = iotdb.logger({
 
 const make = (initd) => {
     const self = iotdb_transport.make();
+    self.name = "iotdb-transport-null";
 
     const _initd = _.d.compose.shallow(initd, {});
 
